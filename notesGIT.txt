@@ -161,8 +161,11 @@ git diff compares working directory with staging area
 It is a very useful command
 
 git diff --staged
+git diff --staged compares previous commit with current staging area
 -------------------------------------------------------------------------------
 
+git commit -a -m "direct commit"	-- pushes all the tracked files directly into the commit..by skipping the staging area
+					-- untracked files are not commited..we have to compulsorily push then into the staging area
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 
