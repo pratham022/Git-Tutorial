@@ -158,6 +158,7 @@ Now, error.log is ignored by git
 git diff
 
 git diff compares working directory with staging area
+It is a very useful command
 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
