@@ -1,0 +1,175 @@
+VCS- Version Control System
+
+Local VCS - tracking version controlling using local hard drive available in own pc. All the other people involved in the project will make changes only in that 1 pc
+
+Centralised VCS - a centralised server is set-up somewhere
+People send pull requests to the server to get the files..
+make changes into it and then again push the updated files back into the server.
+This approach is better than the previous one..but what if the server gets damaged??
+We cannot get older versions of the program from Centralised VCS
+
+Distributed VCS - All the data is distributed to all the people who are collaborating..ie all the history of the files is sent to all people..
+Thus back-up is maintained by every user
+
+
+Features of GIT:
+
+1. It captures snapshots and not the differences
+.git file contains all the project history
+
+2. Almost every operation is local
+remote operations are dependent on server / internet
+local operations are limited to our working device
+
+3. GIT has integrity (files are safe to keep)
+SHA checksum is use to check the authenticity of a file
+
+eg. We are downloading a file/ folder from a website
+The website will tell us that after downloading the checksum of the file should be this much. We downloaded and then we checked its checksum..if checksum does not match with that mentioned one on the website, then we come to know that the file has been changed
+
+4. GIT generally adds data
+Generally user keeps on updating the data..ie he adds data thus addition takes place
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+1. install git (sudo apt update
+		sudo apt install git)
+
+pwd - present working directory
+cd - change directory
+First we go to the project directory and then apply all git commands in it
+We can either use git terminal commands to work with git
+or we can use GUI 
+GUI is easier to use..but we will first use terminal tools
+
+git config --global user.name "pratham022"
+git config --global user.email "pthombre657@gmail.com"
+
+git config --list
+git config user.name
+git config user.email
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+I : working directory
+II : staging area - files you expect to go to the next stage
+III : git directory(repository)
+
+eg. We have 3 files in our working directory
+1. index.html
+2. engine.js
+3. index.css
+And we ahve already created version 1 of our software
+Now, suppose we improve index.html and index.css files
+But, while updating engine.js we introduced some errors
+So, we decided to use updated index.html and index.css files and keep the earlier version of engine.js
+So, in this case we would STAGE index.html and index.css
+files and not engine.js
+Then we can commit these 2 files (snapshot of those files is taken)
+
+
+working		   staging area			git repository
+directory		
+			|				|
+			|      <<-----------------------|
+			|	checkout the project	|
+----------->>		|				|
+stage files		|				|
+			|				|
+			|--------------->>		|
+			|	commit
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+prathamesh@Inspiron-3576:~/GIT_Projects$git status
+fatal: not a git repository (or any of the parent directories): .git
+we use git status command to get the status of the folder
+
+prathamesh@Inspiron-3576:~/GIT_Projects$git init
+Initialized empty Git repository in /home/prathamesh/GIT_Projects/.git/
+git init is used to initialise a project as git project
+
+git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	main_file.txt
+	notesGIT.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+git add --a		to add all the files to staging area
+
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   main_file.txt
+	new file:   notesGIT.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   notesGIT.txt
+
+
+Now after staging the files we can commit them using git commit command
+
+prathamesh@Inspiron-3576:~/GIT_Projects$git commit -m "Initial commit"
+[master (root-commit) e72b4e7] Initial commit
+ 2 files changed, 111 insertions(+)
+ create mode 100644 main_file.txt
+ create mode 100644 notesGIT.txt
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------IMPORTANT GIT COMMANDS---------------------------
+git status
+
+git add --a
+git add filename
+
+git commit -m "Initial Commit"
+
+git log
+
+rm -rf .git			-- to stop tracking
+
+git clone url
+
+touch filename.ext		-- creates new file
+
+touch .gitignore
+Inside the .gitignore file
+write error.log			-- error.log is the file name
+*.log 				-- ignores all the .log files
+directory_name/			-- ignores the directory
+
+Now, error.log is ignored by git
+
+git diff
+
+git diff compares working directory with staging area
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+untracked --> unmodified --> modified --> staged
+    when we add files for 
+       the first time
+
+
+
+
+
+
+
+
