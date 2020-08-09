@@ -242,17 +242,49 @@ git checkout -f			--we go to the previous commit
 -----------------------------------------------------------------------------------------
 Working with remote repositories
 
-git status
-git remote add origin urlname--
+git status - To get the status of current directory
 
-git remote 
+git remote - This is used to know the remote repository
+Initially when we use this command, it will not show anything because we have not synced with any remote repository
 
-git remote -v
+First we go to github and create a new repository.
+After setting up the name of the repo, it will provide us with 3 options.
+We will select adding files through local repository ie push fies from local repo
 
-git push -u origin master
+Copy the command provided there:
 
-to give permissions, go to settings go to ssh keys
-search fo adding ssh keys to git
+git remote add origin https://github.com/pratham022/Git-Tutorial.git
+
+Now use the command: git remote
+It will now show origin as the remote repository
+
+git remote -v	- This command will give the links for fetch and pull operations
+
+*******
+git push -u origin master		-- This command is used to push the local repository onto the remote repository
+Initially when we use this command, it may accept your push or it may throw an error that access is denied.
+
+We should get access denied error because, we are pushing local repo to our github for the first time.
+
+So, we need to tell github that this machine which is trying to push contents onto the remote repository is mine only. (or belonds to my network)
+For that configure the ssh key
+
+Search for 'ssh key github' and follow the steps to create a ssh key
+
+1. ssh-keygen -t rsa -b 4096 -C "pthombre657@gmail.com"
+
+Press enter when the prompt asks for passphrase and other things
+
+2. eval "$(ssh-agent -s)"
+
+3. ssh-add ~/.ssh/id_rsa
+
+4. tail ~/.ssh/id_rsa.pub
+
+The 4th command will generate the ssh key.
+Copy paste that key inrto the ssh settings of your github account. (Settings->SSH and keys-> New SSH key)
+
+And now we can push contents from our local repo to our remote github account!!
 
 
 
