@@ -173,7 +173,86 @@ untracked --> unmodified --> modified --> staged
     when we add files for 
        the first time
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+Renaming in git
 
+If we simply rename a file, then git considers that initial file is deleted and creates nw file and gets its status as untracked.
+If we then add our file into the staging area then git comes to know that the file was renamed!!
+Then we can commit the file
+
+If we manually delete a file then we have to manually stage the changes into the staging area(ie by using add command)
+But if we use the below command, git automatically stages the changes.
+Then we just need to commit those changes
+
+git rm third.txt
+
+
+git mv oldname.txt newname.txt
+
+------------------------------------------------
+eg. Suppose we were tracking a file earlier, and now we do not want to track that file.
+Thus we mentioned that file in git ignore.
+Then we make changes into that file.
+We were expecting that git should not bother about the changes from now related to that file as we have already commited those changes.
+But we see that git keeps on tracking that file
+Thus we need to tell git explicitly that do not track this file
+Command for above is:
+
+git rm --cached db.accdb
+
+-------------------------------------------------
+
+git log -p	-- gives detailed info about commit
+
+git log -p -3	-- shows previous 3 commits
+
+git log --stat	-- gives short summary about commits
+
+git log --pretty=oneline
+git log --pretty=short
+git log --pretty=full
+git log --since=2.days
+git log --since=2.years
+git log --since=2.months
+
+git log --pretty=format: "%h -- %an"
+
+explore about this on git acm
+
+---------------------------------------------------
+git log -p -1
+git commit --amend
+
+-----------------------------------------------
+unstaging a file
+
+git add first.txt
+--Now the above file is staged
+--To unstage the file, we use
+
+git restore --staged first.txt
+
+-----------------------------------------------
+to unmodify a file
+
+git checkout -- filename.ext  (IMPORTANT but risky command)
+
+git checkout -f			--we go to the previous commit
+
+-----------------------------------------------------------------------------------------
+Working with remote repositories
+
+git status
+git remote add origin urlname--
+
+git remote 
+
+git remote -v
+
+git push -u origin master
+
+to give permissions, go to settings go to ssh keys
+search fo adding ssh keys to git
 
 
 
