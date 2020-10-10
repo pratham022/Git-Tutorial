@@ -297,6 +297,12 @@ git checkout <branch_name>
 
 The changes commited in this branch will remain in this branch only until they are merged
 Master branch would not be able to see those changes
+Before checking out from sub-branch, make sure that you commit all the work that you have done.
+Else it would give an error while switching to master branch
+
+3. To merge dev branch with master branch, first switch to master branch. Then run the command:
+git merge dev
+git merge <sub-branch>
 
 
 
