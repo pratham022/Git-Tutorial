@@ -1,0 +1,70 @@
+** Getting started with git **
+
+1. Install git
+
+2. Configure user name and email id for first time setup
+
+git config --global user.name "pratham022"
+git config --global user.email "pthombre657@gmail.com"
+
+git config --list
+
+-------------------------------------------------------------------------------------------
+** CONCEPT **
+
+
+working		   staging area			git repository
+directory		
+|			|				|
+|			|      <<-----------------------|
+|			|	checkout the project	|
+|----------->>		|				|
+|stage files		|				|
+|			|				|
+|			|--------------->>		|
+|			|	commit
+
+
+I : working directory
+II : staging area - files you expect to go to the next stage
+III : git directory(repository)
+
+untracked --> unmodified --> modified --> staged(Ready for commit)
+
+-----------------------------------------------------------------------------------------------
+** COMMANDS **
+
+1. 	git status
+2. 	git init
+3. 	git add myfile.txt
+4. 	git add .
+5. 	git add --a
+6. 	git commit -m "Commit Message"
+7. 	git checkout -- "myfile.txt"
+8. 	git reset HEAD myfile.txt
+9. 	git diff
+10. 	git diff --staged
+11. 	git commit -a -m "Commit Message"
+
+12. 	git log
+	git log -p	
+	git log -p -3	
+	git log --stat	
+	git log --pretty=oneline
+	git log --pretty=short
+	git log --pretty=full
+	git log --since=2.days
+	git log --since=2.years
+	git log --since=2.months
+
+13.	touch .gitignore
+
+14. 	git rm myfile.txt
+15.	git mv oldname.txt newname.txt
+
+16. 	git rm --cached filename.extension
+
+
+
+
+
