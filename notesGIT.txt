@@ -295,6 +295,9 @@ git branch <branch_name>
 2. Switch to that branch:
 git checkout <branch_name>
 
+The changes commited in this branch will remain in this branch only until they are merged
+Master branch would not be able to see those changes
+
 
 
 
