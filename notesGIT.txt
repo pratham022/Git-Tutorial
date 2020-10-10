@@ -304,6 +304,17 @@ Else it would give an error while switching to master branch
 git merge dev
 git merge <sub-branch>
 
+4. Now, push the changes on remote:
+git push -u origin master
+
+We see only one branch on the remote repository, and that's absolutely valid because we pushed only master branch onto remote
+
+If we wish to push dev branch also on the remote, then first checkout to that branch
+And use the command:
+git push origin dev, Now your dev branch is also added to remote repository
+
+
+
 
 
 
