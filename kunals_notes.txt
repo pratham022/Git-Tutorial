@@ -1,0 +1,84 @@
+git add .
+git restore --staged filename.txt
+rm -rf names.txt
+git stash
+git stash pop
+git stash clear
+
+git remote add origin url
+git push origin main
+
+
+git branch feature
+git checkout feature
+
+git checkout main
+git commit -m "Latest commit on main"
+
+from where we have forked that url is known as upstream
+origin is my personal
+
+git remote add upstream url
+git remote -v
+
+Whatever I have on my branch, please merge it into main project's main branch
+
+I cannot directly push on upstream because the owner is different. But, I have my own origin with me. So, I will push my branch on my origin
+
+git push origin prathamesh
+
+After I created a new pull request, if I add some code to and again commit on this branch. Then it will NOT allow me to create a New Pull request. 
+Number of commits will be increased from 1 to 2 on the same pull request
+We need to create different branches for new pull requests
+NEW pull requests for NEW features
+
+
+
+If I delete a commit, I can do it by resetting the head
+git reset hash
+
+After that it will contain some previous files, changes, so First bring the files onto the staging area and then stash them. Now, I am in sync with the previous commit
+
+Now, we have to force push the commit because remote contains a commit that is not in my local
+git push origin prathamesh -f
+
+Merging the pr will be done by the owner or someone who has write access to that repo
+
+
+-- HOW TO SYNC ORIGIN WITH UPSTREAM
+
+C:\Users\Admin\Documents\OpenSource\commclassroomOP>git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+C:\Users\Admin\Documents\OpenSource\commclassroomOP>git fetch --all -prune
+error: did you mean `--prune` (with two dashes)?
+
+C:\Users\Admin\Documents\OpenSource\commclassroomOP>git fetch --all --prune
+Fetching origin
+Fetching upstream
+From https://github.com/commclassroom/commclassroomOP
+ * [new branch]      main       -> upstream/main
+ * [new branch]      rahul      -> upstream/rahul
+ * [new branch]      rahul-1    -> upstream/rahul-1
+
+C:\Users\Admin\Documents\OpenSource\commclassroomOP>git reset --hard upstream/main
+HEAD is now at 49f6657 Merge pull request #26 from R11manish/greeting
+
+C:\Users\Admin\Documents\OpenSource\commclassroomOP>git push origin main
+Everything up-to-date
+
+C:\Users\Admin\Documents\OpenSource\commclassroomOP>
+
+
+SHORTCUT:
+git pull upstream main
+Now, my local folder's main branch is also in sync with upstream, Let's now sync the ORIGIN with UPSTREAM
+git push origin main
+
+C:\Users\Admin\Documents\OpenSource\commclassroomOP>
+
+
+*** Whenever you are checking out from 1 branch to a new branch, make sure that the prev branch is commited(up to date) Just make a commit before checking out
+
+commits will be merged into the first pick that appears on the top
